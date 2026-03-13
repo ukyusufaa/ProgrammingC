@@ -1,0 +1,2869 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=2353, cgraph_uid=1, symbol_order=0)
+
+int main ()
+{
+  int y;
+  int x;
+  int size;
+  int number[4][4];
+  int j;
+  int i;
+  int D.2402;
+  int * _1;
+  int _2;
+  int _22;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  size_11 = 4;
+  printf ("%d elements,%d X %d", 16, 4, 4);
+  i_14 = 0;
+  goto <bb 7>; [INV]
+;;    succ:       7
+
+;;   basic block 3, loop depth 1
+;;    pred:       7
+  j_29 = 0;
+  goto <bb 5>; [INV]
+;;    succ:       5
+
+;;   basic block 4, loop depth 2
+;;    pred:       5
+  printf ("Element[%d][%d]", i_3, j_5);
+  _1 = &number[i_3][j_5];
+  scanf ("%d", _1);
+  j_33 = j_5 + 1;
+;;    succ:       5
+
+;;   basic block 5, loop depth 2
+;;    pred:       3
+;;                4
+  # j_5 = PHI <j_29(3), j_33(4)>
+  if (j_5 <= 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+;;    succ:       4
+;;                6
+
+;;   basic block 6, loop depth 1
+;;    pred:       5
+  i_30 = i_3 + 1;
+;;    succ:       7
+
+;;   basic block 7, loop depth 1
+;;    pred:       2
+;;                6
+  # i_3 = PHI <i_14(2), i_30(6)>
+  if (i_3 <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+;;    succ:       3
+;;                8
+
+;;   basic block 8, loop depth 0
+;;    pred:       7
+  i_15 = 0;
+  goto <bb 13>; [INV]
+;;    succ:       13
+
+;;   basic block 9, loop depth 1
+;;    pred:       13
+  j_24 = 0;
+  goto <bb 11>; [INV]
+;;    succ:       11
+
+;;   basic block 10, loop depth 2
+;;    pred:       11
+  _2 = number[i_4][j_6];
+  printf ("%d", _2);
+  j_28 = j_6 + 1;
+;;    succ:       11
+
+;;   basic block 11, loop depth 2
+;;    pred:       9
+;;                10
+  # j_6 = PHI <j_24(9), j_28(10)>
+  if (j_6 <= 3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+;;    succ:       10
+;;                12
+
+;;   basic block 12, loop depth 1
+;;    pred:       11
+  __builtin_putchar (10);
+  i_26 = i_4 + 1;
+;;    succ:       13
+
+;;   basic block 13, loop depth 1
+;;    pred:       8
+;;                12
+  # i_4 = PHI <i_15(8), i_26(12)>
+  if (i_4 <= 3)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+;;    succ:       9
+;;                14
+
+;;   basic block 14, loop depth 0
+;;    pred:       13
+  size_16 = 4;
+  x_18 = calcMain (size_16, &number);
+  y_20 = calcSecondary (size_16, &number);
+  printResult (x_18, y_20);
+  _22 = 0;
+  number ={v} {CLOBBER};
+;;    succ:       15
+
+;;   basic block 15, loop depth 0
+;;    pred:       14
+<L13>:
+  return _22;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (_1 - 1 )
+Partition 2 (_2 - 2 )
+Partition 3 (i_3 - 3 )
+Partition 4 (i_4 - 4 )
+Partition 5 (j_5 - 5 )
+Partition 6 (j_6 - 6 )
+Partition 11 (size_11 - 11 )
+Partition 14 (i_14 - 14 )
+Partition 15 (i_15 - 15 )
+Partition 16 (size_16 - 16 )
+Partition 18 (x_18 - 18 )
+Partition 20 (y_20 - 20 )
+Partition 22 (_22 - 22 )
+Partition 24 (j_24 - 24 )
+Partition 26 (i_26 - 26 )
+Partition 28 (j_28 - 28 )
+Partition 29 (j_29 - 29 )
+Partition 30 (i_30 - 30 )
+Partition 33 (j_33 - 33 )
+Partition 34 (_34(D) - 34 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (i_3 - 3 4 14 15 26 30 )
+Partition 2, base 1 (j_5 - 5 6 24 28 29 33 )
+Partition 4, base 2 (size_11 - 11 16 )
+Partition 14, base 3 (_34(D) - 34 )
+
+
+Partition map 
+
+Partition 0 (i_3 - 3 )
+Partition 1 (i_4 - 4 )
+Partition 2 (j_5 - 5 )
+Partition 3 (j_6 - 6 )
+Partition 4 (size_11 - 11 )
+Partition 5 (i_14 - 14 )
+Partition 6 (i_15 - 15 )
+Partition 7 (size_16 - 16 )
+Partition 8 (j_24 - 24 )
+Partition 9 (i_26 - 26 )
+Partition 10 (j_28 - 28 )
+Partition 11 (j_29 - 29 )
+Partition 12 (i_30 - 30 )
+Partition 13 (j_33 - 33 )
+Partition 14 (_34(D) - 34 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(2147483646, 0) j_5 <-> j_29
+(2147483646, 0) j_5 <-> j_33
+(2147483646, 0) i_3 <-> i_14
+(2147483646, 0) i_3 <-> i_30
+(2147483646, 0) i_3 <-> i_4
+(2147483646, 0) j_5 <-> j_6
+(2147483646, 0) i_3 <-> i_15
+(2147483646, 0) size_11 <-> size_16
+(2147483646, 0) j_5 <-> j_24
+(2147483646, 0) i_3 <-> i_26
+(2147483646, 0) j_5 <-> j_28
+(10000, 0) j_6 <-> j_24
+(10000, 0) j_6 <-> j_28
+(10000, 0) i_4 <-> i_15
+(10000, 0) i_4 <-> i_26
+
+Partition map 
+
+Partition 0 (i_3 - 3 )
+Partition 1 (i_4 - 4 )
+Partition 2 (j_5 - 5 )
+Partition 3 (j_6 - 6 )
+Partition 4 (size_11 - 11 )
+Partition 5 (i_14 - 14 )
+Partition 6 (i_15 - 15 )
+Partition 7 (size_16 - 16 )
+Partition 8 (j_24 - 24 )
+Partition 9 (i_26 - 26 )
+Partition 10 (j_28 - 28 )
+Partition 11 (j_29 - 29 )
+Partition 12 (i_30 - 30 )
+Partition 13 (j_33 - 33 )
+Partition 14 (_34(D) - 34 )
+
+Coalesce list: (5)j_5 & (29)j_29 [map: 2, 11] : Success -> 2
+Coalesce list: (5)j_5 & (33)j_33 [map: 2, 13] : Success -> 2
+Coalesce list: (3)i_3 & (14)i_14 [map: 0, 5] : Success -> 0
+Coalesce list: (3)i_3 & (30)i_30 [map: 0, 12] : Success -> 0
+Coalesce list: (3)i_3 & (4)i_4 [map: 0, 1] : Success -> 0
+Coalesce list: (5)j_5 & (6)j_6 [map: 2, 3] : Success -> 2
+Coalesce list: (3)i_3 & (15)i_15 [map: 0, 6] : Success -> 0
+Coalesce list: (11)size_11 & (16)size_16 [map: 4, 7] : Success -> 4
+Coalesce list: (5)j_5 & (24)j_24 [map: 2, 8] : Success -> 2
+Coalesce list: (3)i_3 & (26)i_26 [map: 0, 9] : Success -> 0
+Coalesce list: (5)j_5 & (28)j_28 [map: 2, 10] : Success -> 2
+Coalesce list: (6)j_5 & (24)j_5: Already Coalesced.
+Coalesce list: (6)j_5 & (28)j_5: Already Coalesced.
+Coalesce list: (4)i_3 & (15)i_3: Already Coalesced.
+Coalesce list: (4)i_3 & (26)i_3: Already Coalesced.
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_1 - 1 )
+Partition 1 (_2 - 2 )
+Partition 2 (i_3 - 3 4 14 15 26 30 )
+Partition 3 (j_5 - 5 6 24 28 29 33 )
+Partition 4 (size_11 - 11 16 )
+Partition 5 (x_18 - 18 )
+Partition 6 (y_20 - 20 )
+Partition 7 (_22 - 22 )
+Partition 8 (_34(D) - 34 )
+
+int main ()
+{
+  int y;
+  int x;
+  int size;
+  int number[4][4];
+  int j;
+  int i;
+  int D.2402;
+  int * _1;
+  int _2;
+  int _22;
+  int _34(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  size_11 = 4;
+  printf ("%d elements,%d X %d", 16, 4, 4);
+  i_14 = 0;
+  goto <bb 7>; [INV]
+;;    succ:       7
+
+;;   basic block 3, loop depth 1
+;;    pred:       7
+  j_29 = 0;
+  goto <bb 5>; [INV]
+;;    succ:       5
+
+;;   basic block 4, loop depth 2
+;;    pred:       5
+  printf ("Element[%d][%d]", i_3, j_5);
+  _1 = &number[i_3][j_5];
+  scanf ("%d", _1);
+  j_33 = j_5 + 1;
+;;    succ:       5
+
+;;   basic block 5, loop depth 2
+;;    pred:       3
+;;                4
+  # j_5 = PHI <j_29(3), j_33(4)>
+  if (j_5 <= 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+;;    succ:       4
+;;                6
+
+;;   basic block 6, loop depth 1
+;;    pred:       5
+  i_30 = i_3 + 1;
+;;    succ:       7
+
+;;   basic block 7, loop depth 1
+;;    pred:       2
+;;                6
+  # i_3 = PHI <i_14(2), i_30(6)>
+  if (i_3 <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+;;    succ:       3
+;;                8
+
+;;   basic block 8, loop depth 0
+;;    pred:       7
+  i_15 = 0;
+  goto <bb 13>; [INV]
+;;    succ:       13
+
+;;   basic block 9, loop depth 1
+;;    pred:       13
+  j_24 = 0;
+  goto <bb 11>; [INV]
+;;    succ:       11
+
+;;   basic block 10, loop depth 2
+;;    pred:       11
+  _2 = number[i_4][j_6];
+  printf ("%d", _2);
+  j_28 = j_6 + 1;
+;;    succ:       11
+
+;;   basic block 11, loop depth 2
+;;    pred:       9
+;;                10
+  # j_6 = PHI <j_24(9), j_28(10)>
+  if (j_6 <= 3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+;;    succ:       10
+;;                12
+
+;;   basic block 12, loop depth 1
+;;    pred:       11
+  __builtin_putchar (10);
+  i_26 = i_4 + 1;
+;;    succ:       13
+
+;;   basic block 13, loop depth 1
+;;    pred:       8
+;;                12
+  # i_4 = PHI <i_15(8), i_26(12)>
+  if (i_4 <= 3)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+;;    succ:       9
+;;                14
+
+;;   basic block 14, loop depth 0
+;;    pred:       13
+  size_16 = 4;
+  x_18 = calcMain (size_16, &number);
+  y_20 = calcSecondary (size_16, &number);
+  printResult (x_18, y_20);
+  _22 = 0;
+  number ={v} {CLOBBER};
+;;    succ:       15
+
+;;   basic block 15, loop depth 0
+;;    pred:       14
+<L13>:
+  return _22;
+;;    succ:       EXIT
+
+}
+
+
+Partition 5: size 64 align 16
+	number
+Partition 4: size 4 align 4
+	y_20
+Partition 3: size 4 align 4
+	x_18
+Partition 2: size 4 align 4
+	size_11
+Partition 1: size 4 align 4
+	j_5
+Partition 0: size 4 align 4
+	i_3
+
+;; Generating RTL for gimple basic block 2
+
+;; size_11 = 4;
+
+(insn 6 5 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])
+        (const_int 4 [0x4])) "diagonal_sum.c":10:9 -1
+     (nil))
+
+;; printf ("%d elements,%d X %d", 16, 4, 4);
+
+(insn 7 6 8 (set (reg:SI 2 cx)
+        (const_int 4 [0x4])) "diagonal_sum.c":13:5 -1
+     (nil))
+
+(insn 8 7 9 (set (reg:SI 1 dx)
+        (const_int 4 [0x4])) "diagonal_sum.c":13:5 -1
+     (nil))
+
+(insn 9 8 10 (set (reg:SI 4 si)
+        (const_int 16 [0x10])) "diagonal_sum.c":13:5 -1
+     (nil))
+
+(insn 10 9 11 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7817fb3a8cf0 *.LC0>)) "diagonal_sum.c":13:5 -1
+     (nil))
+
+(insn 11 10 12 (set (reg:DI 5 di)
+        (reg:DI 86)) "diagonal_sum.c":13:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7817fb3a8cf0 *.LC0>)
+        (nil)))
+
+(insn 12 11 13 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":13:5 -1
+     (nil))
+
+(call_insn 13 12 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":13:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (expr_list:SI (use (reg:SI 2 cx))
+                        (nil)))))))
+
+;; i_14 = 0;
+
+(insn 14 13 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":14:10 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; j_29 = 0;
+
+(insn 18 17 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+        (const_int 0 [0])) "diagonal_sum.c":15:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; printf ("Element[%d][%d]", i_3, j_5);
+
+(insn 22 21 23 (set (reg:SI 87)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(insn 23 22 24 (set (reg:SI 88)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(insn 24 23 25 (set (reg:SI 1 dx)
+        (reg:SI 87)) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(insn 25 24 26 (set (reg:SI 4 si)
+        (reg:SI 88)) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(insn 26 25 27 (set (reg:DI 89)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7817fb3a8d80 *.LC1>)) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(insn 27 26 28 (set (reg:DI 5 di)
+        (reg:DI 89)) "diagonal_sum.c":16:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7817fb3a8d80 *.LC1>)
+        (nil)))
+
+(insn 28 27 29 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":16:13 -1
+     (nil))
+
+(call_insn 29 28 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":16:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+
+;; _1 = &number[i_3][j_5];
+
+(insn 30 29 31 (parallel [
+            (set (reg:DI 90)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 31 30 32 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 32 31 33 (set (reg:DI 91)
+        (sign_extend:DI (reg:SI 92))) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 33 32 34 (set (reg:SI 94)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 34 33 35 (set (reg:DI 93)
+        (sign_extend:DI (reg:SI 94))) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 35 34 36 (parallel [
+            (set (reg:DI 95)
+                (ashift:DI (reg:DI 93)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 36 35 37 (parallel [
+            (set (reg:DI 96)
+                (plus:DI (reg:DI 91)
+                    (reg:DI 95)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 37 36 38 (parallel [
+            (set (reg:DI 97)
+                (ashift:DI (reg:DI 96)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 38 37 0 (parallel [
+            (set (reg/f:DI 82 [ _1 ])
+                (plus:DI (reg:DI 90)
+                    (reg:DI 97)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+
+;; scanf ("%d", _1);
+
+(insn 39 38 40 (set (reg:DI 4 si)
+        (reg/f:DI 82 [ _1 ])) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 40 39 41 (set (reg:DI 98)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(insn 41 40 42 (set (reg:DI 5 di)
+        (reg:DI 98)) "diagonal_sum.c":17:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)
+        (nil)))
+
+(insn 42 41 43 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":17:13 -1
+     (nil))
+
+(call_insn 43 42 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("*__isoc99_scanf") [flags 0x41]  <function_decl 0x7817fb2bed00 scanf>) [0 __builtin_scanf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":17:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+
+;; j_33 = j_5 + 1;
+
+(insn 44 43 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":15:22 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 45 44 46 3 (nil) [0 uses])
+
+(note 46 45 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (j_5 <= 3)
+
+(insn 50 46 51 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+            (const_int 3 [0x3]))) "diagonal_sum.c":15:18 -1
+     (nil))
+
+(jump_insn 51 50 0 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 47)
+            (pc))) "diagonal_sum.c":15:18 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; i_30 = i_3 + 1;
+
+(insn 53 52 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":14:18 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 7
+
+;; 
+
+(code_label 54 53 55 2 (nil) [0 uses])
+
+(note 55 54 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (i_3 <= 3)
+
+(insn 59 55 60 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+            (const_int 3 [0x3]))) "diagonal_sum.c":14:14 -1
+     (nil))
+
+(jump_insn 60 59 0 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 56)
+            (pc))) "diagonal_sum.c":14:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 8
+
+;; i_15 = 0;
+
+(insn 62 61 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":20:10 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 9
+
+;; j_24 = 0;
+
+(insn 66 65 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+        (const_int 0 [0])) "diagonal_sum.c":21:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 10
+
+;; _2 = number[i_4][j_6];
+
+(insn 70 69 71 (set (reg:SI 100)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 71 70 72 (set (reg:DI 99)
+        (sign_extend:DI (reg:SI 100))) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 72 71 73 (set (reg:SI 102)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 73 72 74 (set (reg:DI 101)
+        (sign_extend:DI (reg:SI 102))) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 74 73 75 (parallel [
+            (set (reg:DI 103)
+                (ashift:DI (reg:DI 101)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 75 74 76 (parallel [
+            (set (reg:DI 104)
+                (plus:DI (reg:DI 103)
+                    (reg:DI 99)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 76 75 0 (set (reg:SI 83 [ _2 ])
+        (mem:SI (plus:DI (plus:DI (mult:DI (reg:DI 104)
+                        (const_int 4 [0x4]))
+                    (reg/f:DI 77 virtual-stack-vars))
+                (const_int -80 [0xffffffffffffffb0])) [2 number[i_4][j_6]+0 S4 A32])) "diagonal_sum.c":22:13 -1
+     (nil))
+
+;; printf ("%d", _2);
+
+(insn 77 76 78 (set (reg:SI 4 si)
+        (reg:SI 83 [ _2 ])) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 78 77 79 (set (reg:DI 105)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(insn 79 78 80 (set (reg:DI 5 di)
+        (reg:DI 105)) "diagonal_sum.c":22:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)
+        (nil)))
+
+(insn 80 79 81 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":22:13 -1
+     (nil))
+
+(call_insn 81 80 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":22:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+
+;; j_28 = j_6 + 1;
+
+(insn 82 81 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":21:22 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 11
+
+;; 
+
+(code_label 83 82 84 7 (nil) [0 uses])
+
+(note 84 83 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (j_6 <= 3)
+
+(insn 88 84 89 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+            (const_int 3 [0x3]))) "diagonal_sum.c":21:18 -1
+     (nil))
+
+(jump_insn 89 88 0 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 85)
+            (pc))) "diagonal_sum.c":21:18 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 12
+
+;; __builtin_putchar (10);
+
+(insn 91 90 92 (set (reg:SI 5 di)
+        (const_int 10 [0xa])) "diagonal_sum.c":24:9 -1
+     (nil))
+
+(call_insn 92 91 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7817fb2be400 __builtin_putchar>) [0 __builtin_putchar S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":24:9 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+
+;; i_26 = i_4 + 1;
+
+(insn 93 92 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":20:18 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 13
+
+;; 
+
+(code_label 94 93 95 6 (nil) [0 uses])
+
+(note 95 94 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (i_4 <= 3)
+
+(insn 99 95 100 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+            (const_int 3 [0x3]))) "diagonal_sum.c":20:14 -1
+     (nil))
+
+(jump_insn 100 99 0 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 96)
+            (pc))) "diagonal_sum.c":20:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 14
+
+;; size_16 = 4;
+
+(insn 102 101 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])
+        (const_int 4 [0x4])) "diagonal_sum.c":26:9 -1
+     (nil))
+
+;; x_18 = calcMain (size_16, &number);
+
+(insn 103 102 104 (parallel [
+            (set (reg:DI 106)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":29:13 -1
+     (nil))
+
+(insn 104 103 105 (set (reg:SI 107)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])) "diagonal_sum.c":29:13 -1
+     (nil))
+
+(insn 105 104 106 (set (reg:DI 4 si)
+        (reg:DI 106)) "diagonal_sum.c":29:13 -1
+     (nil))
+
+(insn 106 105 107 (set (reg:SI 5 di)
+        (reg:SI 107)) "diagonal_sum.c":29:13 -1
+     (nil))
+
+(call_insn 107 106 108 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("calcMain") [flags 0x3]  <function_decl 0x7817fb3a3700 calcMain>) [0 calcMain S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":29:13 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+
+(insn 108 107 109 (set (reg:SI 108)
+        (reg:SI 0 ax)) "diagonal_sum.c":29:13 -1
+     (nil))
+
+(insn 109 108 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [2 x+0 S4 A64])
+        (reg:SI 108)) "diagonal_sum.c":29:13 -1
+     (nil))
+
+;; y_20 = calcSecondary (size_16, &number);
+
+(insn 110 109 111 (parallel [
+            (set (reg:DI 109)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":30:13 -1
+     (nil))
+
+(insn 111 110 112 (set (reg:SI 110)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])) "diagonal_sum.c":30:13 -1
+     (nil))
+
+(insn 112 111 113 (set (reg:DI 4 si)
+        (reg:DI 109)) "diagonal_sum.c":30:13 -1
+     (nil))
+
+(insn 113 112 114 (set (reg:SI 5 di)
+        (reg:SI 110)) "diagonal_sum.c":30:13 -1
+     (nil))
+
+(call_insn 114 113 115 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("calcSecondary") [flags 0x3]  <function_decl 0x7817fb3a3800 calcSecondary>) [0 calcSecondary S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":30:13 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+
+(insn 115 114 116 (set (reg:SI 111)
+        (reg:SI 0 ax)) "diagonal_sum.c":30:13 -1
+     (nil))
+
+(insn 116 115 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -84 [0xffffffffffffffac])) [2 y+0 S4 A32])
+        (reg:SI 111)) "diagonal_sum.c":30:13 -1
+     (nil))
+
+;; printResult (x_18, y_20);
+
+(insn 117 116 118 (set (reg:SI 112)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -84 [0xffffffffffffffac])) [2 y+0 S4 A32])) "diagonal_sum.c":31:5 -1
+     (nil))
+
+(insn 118 117 119 (set (reg:SI 113)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [2 x+0 S4 A64])) "diagonal_sum.c":31:5 -1
+     (nil))
+
+(insn 119 118 120 (set (reg:SI 4 si)
+        (reg:SI 112)) "diagonal_sum.c":31:5 -1
+     (nil))
+
+(insn 120 119 121 (set (reg:SI 5 di)
+        (reg:SI 113)) "diagonal_sum.c":31:5 -1
+     (nil))
+
+(call_insn 121 120 0 (call (mem:QI (symbol_ref:DI ("printResult") [flags 0x3]  <function_decl 0x7817fb3a3900 printResult>) [0 printResult S1 A8])
+        (const_int 0 [0])) "diagonal_sum.c":31:5 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+
+;; _22 = 0;
+
+(insn 122 121 0 (set (reg:SI 84 [ _22 ])
+        (const_int 0 [0])) "diagonal_sum.c":33:12 -1
+     (nil))
+
+;; number ={v} {CLOBBER};
+
+(nil)
+
+;; Generating RTL for gimple basic block 15
+
+;; <L13>:
+
+(code_label 123 122 124 10 (nil) [0 uses])
+
+(note 124 123 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _22;
+
+(insn 125 124 126 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _22 ])) "diagonal_sum.c":34:1 -1
+     (nil))
+
+(jump_insn 126 125 127 (set (pc)
+        (label_ref 0)) "diagonal_sum.c":34:1 -1
+     (nil))
+
+(barrier 127 126 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 16 into block 15...
+Merged blocks 15 and 16.
+Merged 15 and 16 without moving.
+Removing jump 126.
+Merging block 17 into block 15...
+Merged blocks 15 and 17.
+Merged 15 and 17 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 3 2 NOTE_INSN_FUNCTION_BEG)
+(insn 3 2 6 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [1 D.2413+0 S8 A64])
+                (unspec:DI [
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_SET))
+            (set (scratch:DI)
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":7:11 -1
+     (nil))
+(insn 6 3 7 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])
+        (const_int 4 [0x4])) "diagonal_sum.c":10:9 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 2 cx)
+        (const_int 4 [0x4])) "diagonal_sum.c":13:5 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 1 dx)
+        (const_int 4 [0x4])) "diagonal_sum.c":13:5 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 4 si)
+        (const_int 16 [0x10])) "diagonal_sum.c":13:5 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7817fb3a8cf0 *.LC0>)) "diagonal_sum.c":13:5 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (reg:DI 86)) "diagonal_sum.c":13:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7817fb3a8cf0 *.LC0>)
+        (nil)))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":13:5 -1
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":13:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (expr_list:SI (use (reg:SI 2 cx))
+                        (nil)))))))
+(insn 14 13 15 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":14:10 -1
+     (nil))
+(jump_insn 15 14 16 2 (set (pc)
+        (label_ref 54)) "diagonal_sum.c":14:5 -1
+     (nil)
+ -> 54)
+;;  succ:       8
+
+(barrier 16 15 56)
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       8
+(code_label 56 16 17 4 5 (nil) [1 uses])
+(note 17 56 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+        (const_int 0 [0])) "diagonal_sum.c":15:14 -1
+     (nil))
+(jump_insn 19 18 20 4 (set (pc)
+        (label_ref 45)) "diagonal_sum.c":15:9 -1
+     (nil)
+ -> 45)
+;;  succ:       6
+
+(barrier 20 19 47)
+;; basic block 5, loop depth 2, maybe hot
+;;  prev block 4, next block 6, flags: (NEW, REACHABLE, RTL)
+;;  pred:       6
+(code_label 47 20 21 5 4 (nil) [1 uses])
+(note 21 47 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 5 (set (reg:SI 87)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":16:13 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 88)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":16:13 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 1 dx)
+        (reg:SI 87)) "diagonal_sum.c":16:13 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 4 si)
+        (reg:SI 88)) "diagonal_sum.c":16:13 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:DI 89)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7817fb3a8d80 *.LC1>)) "diagonal_sum.c":16:13 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:DI 5 di)
+        (reg:DI 89)) "diagonal_sum.c":16:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7817fb3a8d80 *.LC1>)
+        (nil)))
+(insn 28 27 29 5 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":16:13 -1
+     (nil))
+(call_insn 29 28 30 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":16:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 30 29 31 5 (parallel [
+            (set (reg:DI 90)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:DI 91)
+        (sign_extend:DI (reg:SI 92))) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 94)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:DI 93)
+        (sign_extend:DI (reg:SI 94))) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 35 34 36 5 (parallel [
+            (set (reg:DI 95)
+                (ashift:DI (reg:DI 93)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 36 35 37 5 (parallel [
+            (set (reg:DI 96)
+                (plus:DI (reg:DI 91)
+                    (reg:DI 95)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 37 36 38 5 (parallel [
+            (set (reg:DI 97)
+                (ashift:DI (reg:DI 96)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 38 37 39 5 (parallel [
+            (set (reg/f:DI 82 [ _1 ])
+                (plus:DI (reg:DI 90)
+                    (reg:DI 97)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 39 38 40 5 (set (reg:DI 4 si)
+        (reg/f:DI 82 [ _1 ])) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 40 39 41 5 (set (reg:DI 98)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)) "diagonal_sum.c":17:13 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:DI 5 di)
+        (reg:DI 98)) "diagonal_sum.c":17:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)
+        (nil)))
+(insn 42 41 43 5 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":17:13 -1
+     (nil))
+(call_insn 43 42 44 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("*__isoc99_scanf") [flags 0x41]  <function_decl 0x7817fb2bed00 scanf>) [0 __builtin_scanf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":17:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 44 43 45 5 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":15:22 -1
+     (nil))
+;;  succ:       6 (FALLTHRU,DFS_BACK)
+
+;; basic block 6, loop depth 2, maybe hot
+;;  prev block 5, next block 7, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4
+;;              5 (FALLTHRU,DFS_BACK)
+(code_label 45 44 46 6 3 (nil) [1 uses])
+(note 46 45 50 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 50 46 51 6 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+            (const_int 3 [0x3]))) "diagonal_sum.c":15:18 -1
+     (nil))
+(jump_insn 51 50 52 6 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 47)
+            (pc))) "diagonal_sum.c":15:18 -1
+     (nil)
+ -> 47)
+;;  succ:       5
+;;              7 (FALLTHRU)
+
+;; basic block 7, loop depth 1, maybe hot
+;;  prev block 6, next block 8, flags: (NEW, REACHABLE, RTL)
+;;  pred:       6 (FALLTHRU)
+(note 52 51 53 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 7 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":14:18 -1
+     (nil))
+;;  succ:       8 (FALLTHRU,DFS_BACK)
+
+;; basic block 8, loop depth 1, maybe hot
+;;  prev block 7, next block 9, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2
+;;              7 (FALLTHRU,DFS_BACK)
+(code_label 54 53 55 8 2 (nil) [1 uses])
+(note 55 54 59 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 59 55 60 8 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+            (const_int 3 [0x3]))) "diagonal_sum.c":14:14 -1
+     (nil))
+(jump_insn 60 59 61 8 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 56)
+            (pc))) "diagonal_sum.c":14:14 -1
+     (nil)
+ -> 56)
+;;  succ:       4
+;;              9 (FALLTHRU)
+
+;; basic block 9, loop depth 0, maybe hot
+;;  prev block 8, next block 10, flags: (NEW, REACHABLE, RTL)
+;;  pred:       8 (FALLTHRU)
+(note 61 60 62 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 9 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":20:10 -1
+     (nil))
+(jump_insn 63 62 64 9 (set (pc)
+        (label_ref 94)) "diagonal_sum.c":20:5 -1
+     (nil)
+ -> 94)
+;;  succ:       14
+
+(barrier 64 63 96)
+;; basic block 10, loop depth 1, maybe hot
+;;  prev block 9, next block 11, flags: (NEW, REACHABLE, RTL)
+;;  pred:       14
+(code_label 96 64 65 10 9 (nil) [1 uses])
+(note 65 96 66 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 10 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+        (const_int 0 [0])) "diagonal_sum.c":21:14 -1
+     (nil))
+(jump_insn 67 66 68 10 (set (pc)
+        (label_ref 83)) "diagonal_sum.c":21:9 -1
+     (nil)
+ -> 83)
+;;  succ:       12
+
+(barrier 68 67 85)
+;; basic block 11, loop depth 2, maybe hot
+;;  prev block 10, next block 12, flags: (NEW, REACHABLE, RTL)
+;;  pred:       12
+(code_label 85 68 69 11 8 (nil) [1 uses])
+(note 69 85 70 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 70 69 71 11 (set (reg:SI 100)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 71 70 72 11 (set (reg:DI 99)
+        (sign_extend:DI (reg:SI 100))) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 72 71 73 11 (set (reg:SI 102)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 73 72 74 11 (set (reg:DI 101)
+        (sign_extend:DI (reg:SI 102))) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 74 73 75 11 (parallel [
+            (set (reg:DI 103)
+                (ashift:DI (reg:DI 101)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 75 74 76 11 (parallel [
+            (set (reg:DI 104)
+                (plus:DI (reg:DI 103)
+                    (reg:DI 99)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 76 75 77 11 (set (reg:SI 83 [ _2 ])
+        (mem:SI (plus:DI (plus:DI (mult:DI (reg:DI 104)
+                        (const_int 4 [0x4]))
+                    (reg/f:DI 77 virtual-stack-vars))
+                (const_int -80 [0xffffffffffffffb0])) [2 number[i_4][j_6]+0 S4 A32])) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 77 76 78 11 (set (reg:SI 4 si)
+        (reg:SI 83 [ _2 ])) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 78 77 79 11 (set (reg:DI 105)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)) "diagonal_sum.c":22:13 -1
+     (nil))
+(insn 79 78 80 11 (set (reg:DI 5 di)
+        (reg:DI 105)) "diagonal_sum.c":22:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7817fb3a8e10 *.LC2>)
+        (nil)))
+(insn 80 79 81 11 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":22:13 -1
+     (nil))
+(call_insn 81 80 82 11 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":22:13 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 82 81 83 11 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":21:22 -1
+     (nil))
+;;  succ:       12 (FALLTHRU,DFS_BACK)
+
+;; basic block 12, loop depth 2, maybe hot
+;;  prev block 11, next block 13, flags: (NEW, REACHABLE, RTL)
+;;  pred:       10
+;;              11 (FALLTHRU,DFS_BACK)
+(code_label 83 82 84 12 7 (nil) [1 uses])
+(note 84 83 88 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 88 84 89 12 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [2 j+0 S4 A128])
+            (const_int 3 [0x3]))) "diagonal_sum.c":21:18 -1
+     (nil))
+(jump_insn 89 88 90 12 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 85)
+            (pc))) "diagonal_sum.c":21:18 -1
+     (nil)
+ -> 85)
+;;  succ:       11
+;;              13 (FALLTHRU)
+
+;; basic block 13, loop depth 1, maybe hot
+;;  prev block 12, next block 14, flags: (NEW, REACHABLE, RTL)
+;;  pred:       12 (FALLTHRU)
+(note 90 89 91 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 91 90 92 13 (set (reg:SI 5 di)
+        (const_int 10 [0xa])) "diagonal_sum.c":24:9 -1
+     (nil))
+(call_insn 92 91 93 13 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7817fb2be400 __builtin_putchar>) [0 __builtin_putchar S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":24:9 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 93 92 94 13 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":20:18 -1
+     (nil))
+;;  succ:       14 (FALLTHRU,DFS_BACK)
+
+;; basic block 14, loop depth 1, maybe hot
+;;  prev block 13, next block 15, flags: (NEW, REACHABLE, RTL)
+;;  pred:       9
+;;              13 (FALLTHRU,DFS_BACK)
+(code_label 94 93 95 14 6 (nil) [1 uses])
+(note 95 94 99 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 99 95 100 14 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -100 [0xffffffffffffff9c])) [2 i+0 S4 A32])
+            (const_int 3 [0x3]))) "diagonal_sum.c":20:14 -1
+     (nil))
+(jump_insn 100 99 101 14 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 96)
+            (pc))) "diagonal_sum.c":20:14 -1
+     (nil)
+ -> 96)
+;;  succ:       10
+;;              15 (FALLTHRU)
+
+;; basic block 15, loop depth 0, maybe hot
+;;  prev block 14, next block 18, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       14 (FALLTHRU)
+(note 101 100 102 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 102 101 103 15 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])
+        (const_int 4 [0x4])) "diagonal_sum.c":26:9 -1
+     (nil))
+(insn 103 102 104 15 (parallel [
+            (set (reg:DI 106)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":29:13 -1
+     (nil))
+(insn 104 103 105 15 (set (reg:SI 107)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])) "diagonal_sum.c":29:13 -1
+     (nil))
+(insn 105 104 106 15 (set (reg:DI 4 si)
+        (reg:DI 106)) "diagonal_sum.c":29:13 -1
+     (nil))
+(insn 106 105 107 15 (set (reg:SI 5 di)
+        (reg:SI 107)) "diagonal_sum.c":29:13 -1
+     (nil))
+(call_insn 107 106 108 15 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("calcMain") [flags 0x3]  <function_decl 0x7817fb3a3700 calcMain>) [0 calcMain S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":29:13 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 108 107 109 15 (set (reg:SI 108)
+        (reg:SI 0 ax)) "diagonal_sum.c":29:13 -1
+     (nil))
+(insn 109 108 110 15 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [2 x+0 S4 A64])
+        (reg:SI 108)) "diagonal_sum.c":29:13 -1
+     (nil))
+(insn 110 109 111 15 (parallel [
+            (set (reg:DI 109)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":30:13 -1
+     (nil))
+(insn 111 110 112 15 (set (reg:SI 110)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -92 [0xffffffffffffffa4])) [2 size+0 S4 A32])) "diagonal_sum.c":30:13 -1
+     (nil))
+(insn 112 111 113 15 (set (reg:DI 4 si)
+        (reg:DI 109)) "diagonal_sum.c":30:13 -1
+     (nil))
+(insn 113 112 114 15 (set (reg:SI 5 di)
+        (reg:SI 110)) "diagonal_sum.c":30:13 -1
+     (nil))
+(call_insn 114 113 115 15 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("calcSecondary") [flags 0x3]  <function_decl 0x7817fb3a3800 calcSecondary>) [0 calcSecondary S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":30:13 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 115 114 116 15 (set (reg:SI 111)
+        (reg:SI 0 ax)) "diagonal_sum.c":30:13 -1
+     (nil))
+(insn 116 115 117 15 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -84 [0xffffffffffffffac])) [2 y+0 S4 A32])
+        (reg:SI 111)) "diagonal_sum.c":30:13 -1
+     (nil))
+(insn 117 116 118 15 (set (reg:SI 112)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -84 [0xffffffffffffffac])) [2 y+0 S4 A32])) "diagonal_sum.c":31:5 -1
+     (nil))
+(insn 118 117 119 15 (set (reg:SI 113)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [2 x+0 S4 A64])) "diagonal_sum.c":31:5 -1
+     (nil))
+(insn 119 118 120 15 (set (reg:SI 4 si)
+        (reg:SI 112)) "diagonal_sum.c":31:5 -1
+     (nil))
+(insn 120 119 121 15 (set (reg:SI 5 di)
+        (reg:SI 113)) "diagonal_sum.c":31:5 -1
+     (nil))
+(call_insn 121 120 122 15 (call (mem:QI (symbol_ref:DI ("printResult") [flags 0x3]  <function_decl 0x7817fb3a3900 printResult>) [0 printResult S1 A8])
+        (const_int 0 [0])) "diagonal_sum.c":31:5 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+(insn 122 121 125 15 (set (reg:SI 84 [ _22 ])
+        (const_int 0 [0])) "diagonal_sum.c":33:12 -1
+     (nil))
+(insn 125 122 129 15 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _22 ])) "diagonal_sum.c":34:1 -1
+     (nil))
+(insn 129 125 130 15 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                                (const_int -8 [0xfffffffffffffff8])) [1 D.2413+0 S8 A64])
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_TEST))
+            (clobber (scratch:DI))
+        ]) "diagonal_sum.c":34:1 -1
+     (nil))
+(jump_insn 130 129 137 15 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 133)
+            (pc))) "diagonal_sum.c":34:1 -1
+     (nil)
+ -> 133)
+;;  succ:       19
+;;              18 (FALLTHRU)
+
+;; basic block 18, loop depth 0, maybe hot
+;;  prev block 15, next block 19, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       15 (FALLTHRU)
+(note 137 130 131 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(call_insn 131 137 132 18 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7817fb3b9700 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "diagonal_sum.c":34:1 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+;;  succ:      
+
+(barrier 132 131 133)
+;; basic block 19, loop depth 0, maybe hot
+;;  prev block 18, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       15
+(code_label 133 132 138 19 11 (nil) [1 uses])
+(note 138 133 134 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 134 138 135 19 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "diagonal_sum.c":34:1 -1
+     (nil))
+(insn 135 134 0 19 (use (reg/i:SI 0 ax)) "diagonal_sum.c":34:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function calcMain (calcMain, funcdef_no=1, decl_uid=2346, cgraph_uid=2, symbol_order=1)
+
+__attribute__((access ("^1[ ]", )))
+int calcMain (int size, int[4] * arr)
+{
+  int i;
+  int sumMain;
+  int D.2405;
+  long unsigned int _1;
+  long unsigned int _2;
+  int[4] * _3;
+  int _4;
+  int _10;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  sumMain_7 = 0;
+  i_8 = 0;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  _1 = (long unsigned int) i_6;
+  _2 = _1 * 16;
+  _3 = arr_12(D) + _2;
+  _4 = (*_3)[i_6];
+  sumMain_13 = sumMain_5 + _4;
+  i_14 = i_6 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # sumMain_5 = PHI <sumMain_7(2), sumMain_13(3)>
+  # i_6 = PHI <i_8(2), i_14(3)>
+  if (i_6 < size_9(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _10 = sumMain_5;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (_1 - 1 )
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 4 (_4 - 4 )
+Partition 5 (sumMain_5 - 5 )
+Partition 6 (i_6 - 6 )
+Partition 7 (sumMain_7 - 7 )
+Partition 8 (i_8 - 8 )
+Partition 9 (size_9(D) - 9 )
+Partition 10 (_10 - 10 )
+Partition 12 (arr_12(D) - 12 )
+Partition 13 (sumMain_13 - 13 )
+Partition 14 (i_14 - 14 )
+Partition 15 (_15(D) - 15 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (sumMain_5 - 5 7 13 )
+Partition 1, base 1 (i_6 - 6 8 14 )
+Partition 4, base 2 (size_9(D) - 9 )
+Partition 5, base 3 (arr_12(D) - 12 )
+Partition 8, base 4 (_15(D) - 15 )
+
+
+Partition map 
+
+Partition 0 (sumMain_5 - 5 )
+Partition 1 (i_6 - 6 )
+Partition 2 (sumMain_7 - 7 )
+Partition 3 (i_8 - 8 )
+Partition 4 (size_9(D) - 9 )
+Partition 5 (arr_12(D) - 12 )
+Partition 6 (sumMain_13 - 13 )
+Partition 7 (i_14 - 14 )
+Partition 8 (_15(D) - 15 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(2147483646, 0) sumMain_5 <-> sumMain_7
+(2147483646, 0) sumMain_5 <-> sumMain_13
+(2147483646, 0) i_6 <-> i_8
+(2147483646, 0) i_6 <-> i_14
+
+Partition map 
+
+Partition 0 (sumMain_5 - 5 )
+Partition 1 (i_6 - 6 )
+Partition 2 (sumMain_7 - 7 )
+Partition 3 (i_8 - 8 )
+Partition 4 (size_9(D) - 9 )
+Partition 5 (arr_12(D) - 12 )
+Partition 6 (sumMain_13 - 13 )
+Partition 7 (i_14 - 14 )
+Partition 8 (_15(D) - 15 )
+
+Coalesce list: (5)sumMain_5 & (7)sumMain_7 [map: 0, 2] : Success -> 0
+Coalesce list: (5)sumMain_5 & (13)sumMain_13 [map: 0, 6] : Success -> 0
+Coalesce list: (6)i_6 & (8)i_8 [map: 1, 3] : Success -> 1
+Coalesce list: (6)i_6 & (14)i_14 [map: 1, 7] : Success -> 1
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_1 - 1 )
+Partition 1 (_2 - 2 )
+Partition 2 (_3 - 3 )
+Partition 3 (_4 - 4 )
+Partition 4 (sumMain_5 - 5 7 13 )
+Partition 5 (i_6 - 6 8 14 )
+Partition 6 (size_9(D) - 9 )
+Partition 7 (_10 - 10 )
+Partition 8 (arr_12(D) - 12 )
+Partition 9 (_15(D) - 15 )
+
+__attribute__((access ("^1[ ]", )))
+int calcMain (int size, int[4] * arr)
+{
+  int i;
+  int sumMain;
+  int D.2405;
+  long unsigned int _1;
+  long unsigned int _2;
+  int[4] * _3;
+  int _4;
+  int _10;
+  int _15(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  sumMain_7 = 0;
+  i_8 = 0;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  _1 = (long unsigned int) i_6;
+  _2 = _1 * 16;
+  _3 = arr_12(D) + _2;
+  _4 = (*_3)[i_6];
+  sumMain_13 = sumMain_5 + _4;
+  i_14 = i_6 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # sumMain_5 = PHI <sumMain_7(2), sumMain_13(3)>
+  # i_6 = PHI <i_8(2), i_14(3)>
+  if (i_6 < size_9(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _10 = sumMain_5;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+Partition 1: size 4 align 4
+	i_6
+Partition 0: size 4 align 4
+	sumMain_5
+
+;; Generating RTL for gimple basic block 2
+
+;; sumMain_7 = 0;
+
+(insn 7 6 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+        (const_int 0 [0])) "diagonal_sum.c":36:9 -1
+     (nil))
+
+;; i_8 = 0;
+
+(insn 8 7 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":39:10 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; _1 = (long unsigned int) i_6;
+
+(insn 12 11 13 (set (reg:SI 88)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":40:21 -1
+     (nil))
+
+(insn 13 12 0 (set (reg:DI 82 [ _1 ])
+        (sign_extend:DI (reg:SI 88))) "diagonal_sum.c":40:21 -1
+     (nil))
+
+;; _2 = _1 * 16;
+
+(insn 14 13 0 (parallel [
+            (set (reg:DI 83 [ _2 ])
+                (ashift:DI (reg:DI 82 [ _1 ])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:21 -1
+     (nil))
+
+;; _3 = arr_12(D) + _2;
+
+(insn 15 14 16 (set (reg/f:DI 89)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])) "diagonal_sum.c":40:21 -1
+     (nil))
+
+(insn 16 15 0 (parallel [
+            (set (reg/f:DI 84 [ _3 ])
+                (plus:DI (reg:DI 83 [ _2 ])
+                    (reg/f:DI 89)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:21 -1
+     (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+            (reg:DI 83 [ _2 ]))
+        (nil)))
+
+;; _4 = (*_3)[i_6];
+
+(insn 17 16 18 (set (reg:SI 91)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":40:24 -1
+     (nil))
+
+(insn 18 17 19 (set (reg:DI 90)
+        (sign_extend:DI (reg:SI 91))) "diagonal_sum.c":40:24 -1
+     (nil))
+
+(insn 19 18 0 (set (reg:SI 85 [ _4 ])
+        (mem:SI (plus:DI (mult:DI (reg:DI 90)
+                    (const_int 4 [0x4]))
+                (reg/f:DI 84 [ _3 ])) [2 (*_3)[i_6]+0 S4 A32])) "diagonal_sum.c":40:24 -1
+     (nil))
+
+;; sumMain_13 = sumMain_5 + _4;
+
+(insn 20 19 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:16 -1
+     (nil))
+
+;; i_14 = i_6 + 1;
+
+(insn 21 20 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":39:21 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 22 21 23 13 (nil) [0 uses])
+
+(note 23 22 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (i_6 < size_9(D))
+
+(insn 25 23 26 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":39:14 -1
+     (nil))
+
+(insn 26 25 27 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 92)
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32]))) "diagonal_sum.c":39:14 -1
+     (nil))
+
+(jump_insn 27 26 0 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) "diagonal_sum.c":39:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; _10 = sumMain_5;
+
+(insn 29 28 0 (set (reg:SI 86 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])) "diagonal_sum.c":42:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; <L3>:
+
+(code_label 30 29 31 15 (nil) [0 uses])
+
+(note 31 30 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _10;
+
+(insn 32 31 33 (set (reg:SI 87 [ <retval> ])
+        (reg:SI 86 [ _10 ])) "diagonal_sum.c":42:12 -1
+     (nil))
+
+(jump_insn 33 32 34 (set (pc)
+        (label_ref 0)) "diagonal_sum.c":42:12 -1
+     (nil))
+
+(barrier 34 33 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+Removing jump 33.
+Merging block 8 into block 6...
+Merged blocks 6 and 8.
+Merged 6 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])
+        (reg:SI 5 di [ size ])) "diagonal_sum.c":35:36 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+        (reg:DI 4 si [ arr ])) "diagonal_sum.c":35:36 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+        (const_int 0 [0])) "diagonal_sum.c":36:9 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":39:10 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (label_ref 22)) "diagonal_sum.c":39:5 -1
+     (nil)
+ -> 22)
+;;  succ:       5
+
+(barrier 10 9 24)
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5
+(code_label 24 10 11 4 14 (nil) [1 uses])
+(note 11 24 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 88)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":40:21 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:DI 82 [ _1 ])
+        (sign_extend:DI (reg:SI 88))) "diagonal_sum.c":40:21 -1
+     (nil))
+(insn 14 13 15 4 (parallel [
+            (set (reg:DI 83 [ _2 ])
+                (ashift:DI (reg:DI 82 [ _1 ])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:21 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:DI 89)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])) "diagonal_sum.c":40:21 -1
+     (nil))
+(insn 16 15 17 4 (parallel [
+            (set (reg/f:DI 84 [ _3 ])
+                (plus:DI (reg:DI 83 [ _2 ])
+                    (reg/f:DI 89)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:21 -1
+     (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+            (reg:DI 83 [ _2 ]))
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 91)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":40:24 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:DI 90)
+        (sign_extend:DI (reg:SI 91))) "diagonal_sum.c":40:24 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 85 [ _4 ])
+        (mem:SI (plus:DI (mult:DI (reg:DI 90)
+                    (const_int 4 [0x4]))
+                (reg/f:DI 84 [ _3 ])) [2 (*_3)[i_6]+0 S4 A32])) "diagonal_sum.c":40:24 -1
+     (nil))
+(insn 20 19 21 4 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":40:16 -1
+     (nil))
+(insn 21 20 22 4 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":39:21 -1
+     (nil))
+;;  succ:       5 (FALLTHRU,DFS_BACK)
+
+;; basic block 5, loop depth 1, maybe hot
+;;  prev block 4, next block 6, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2
+;;              4 (FALLTHRU,DFS_BACK)
+(code_label 22 21 23 5 13 (nil) [1 uses])
+(note 23 22 25 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 25 23 26 5 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 i+0 S4 A32])) "diagonal_sum.c":39:14 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 92)
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32]))) "diagonal_sum.c":39:14 -1
+     (nil))
+(jump_insn 27 26 28 5 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) "diagonal_sum.c":39:14 -1
+     (nil)
+ -> 24)
+;;  succ:       4
+;;              6 (FALLTHRU)
+
+;; basic block 6, loop depth 0, maybe hot
+;;  prev block 5, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5 (FALLTHRU)
+(note 28 27 29 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 32 6 (set (reg:SI 86 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 sumMain+0 S4 A64])) "diagonal_sum.c":42:12 -1
+     (nil))
+(insn 32 29 36 6 (set (reg:SI 87 [ <retval> ])
+        (reg:SI 86 [ _10 ])) "diagonal_sum.c":42:12 -1
+     (nil))
+(insn 36 32 37 6 (set (reg/i:SI 0 ax)
+        (reg:SI 87 [ <retval> ])) "diagonal_sum.c":43:1 -1
+     (nil))
+(insn 37 36 0 6 (use (reg/i:SI 0 ax)) "diagonal_sum.c":43:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function calcSecondary (calcSecondary, funcdef_no=2, decl_uid=2349, cgraph_uid=3, symbol_order=2)
+
+__attribute__((access ("^1[ ]", )))
+int calcSecondary (int size, int[4] * arr)
+{
+  int sumSecondary;
+  int i;
+  int D.2407;
+  long unsigned int _1;
+  long unsigned int _2;
+  int[4] * _3;
+  int _4;
+  int _5;
+  int _6;
+  int _12;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  sumSecondary_9 = 0;
+  i_10 = 0;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  _1 = (long unsigned int) i_7;
+  _2 = _1 * 16;
+  _3 = arr_14(D) + _2;
+  _4 = size_11(D) + -1;
+  _5 = _4 - i_7;
+  _6 = (*_3)[_5];
+  sumSecondary_15 = sumSecondary_8 + _6;
+  i_16 = i_7 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # i_7 = PHI <i_10(2), i_16(3)>
+  # sumSecondary_8 = PHI <sumSecondary_9(2), sumSecondary_15(3)>
+  if (i_7 < size_11(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _12 = sumSecondary_8;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _12;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (_1 - 1 )
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 4 (_4 - 4 )
+Partition 5 (_5 - 5 )
+Partition 6 (_6 - 6 )
+Partition 7 (i_7 - 7 )
+Partition 8 (sumSecondary_8 - 8 )
+Partition 9 (sumSecondary_9 - 9 )
+Partition 10 (i_10 - 10 )
+Partition 11 (size_11(D) - 11 )
+Partition 12 (_12 - 12 )
+Partition 14 (arr_14(D) - 14 )
+Partition 15 (sumSecondary_15 - 15 )
+Partition 16 (i_16 - 16 )
+Partition 17 (_17(D) - 17 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (i_7 - 7 10 16 )
+Partition 1, base 1 (sumSecondary_8 - 8 9 15 )
+Partition 4, base 2 (size_11(D) - 11 )
+Partition 5, base 3 (arr_14(D) - 14 )
+Partition 8, base 4 (_17(D) - 17 )
+
+
+Partition map 
+
+Partition 0 (i_7 - 7 )
+Partition 1 (sumSecondary_8 - 8 )
+Partition 2 (sumSecondary_9 - 9 )
+Partition 3 (i_10 - 10 )
+Partition 4 (size_11(D) - 11 )
+Partition 5 (arr_14(D) - 14 )
+Partition 6 (sumSecondary_15 - 15 )
+Partition 7 (i_16 - 16 )
+Partition 8 (_17(D) - 17 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(2147483646, 0) i_7 <-> i_10
+(2147483646, 0) i_7 <-> i_16
+(2147483646, 0) sumSecondary_8 <-> sumSecondary_9
+(2147483646, 0) sumSecondary_8 <-> sumSecondary_15
+
+Partition map 
+
+Partition 0 (i_7 - 7 )
+Partition 1 (sumSecondary_8 - 8 )
+Partition 2 (sumSecondary_9 - 9 )
+Partition 3 (i_10 - 10 )
+Partition 4 (size_11(D) - 11 )
+Partition 5 (arr_14(D) - 14 )
+Partition 6 (sumSecondary_15 - 15 )
+Partition 7 (i_16 - 16 )
+Partition 8 (_17(D) - 17 )
+
+Coalesce list: (7)i_7 & (10)i_10 [map: 0, 3] : Success -> 0
+Coalesce list: (7)i_7 & (16)i_16 [map: 0, 7] : Success -> 0
+Coalesce list: (8)sumSecondary_8 & (9)sumSecondary_9 [map: 1, 2] : Success -> 1
+Coalesce list: (8)sumSecondary_8 & (15)sumSecondary_15 [map: 1, 6] : Success -> 1
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_1 - 1 )
+Partition 1 (_2 - 2 )
+Partition 2 (_3 - 3 )
+Partition 3 (_4 - 4 )
+Partition 4 (_5 - 5 )
+Partition 5 (_6 - 6 )
+Partition 6 (i_7 - 7 10 16 )
+Partition 7 (sumSecondary_8 - 8 9 15 )
+Partition 8 (size_11(D) - 11 )
+Partition 9 (_12 - 12 )
+Partition 10 (arr_14(D) - 14 )
+Partition 11 (_17(D) - 17 )
+
+__attribute__((access ("^1[ ]", )))
+int calcSecondary (int size, int[4] * arr)
+{
+  int sumSecondary;
+  int i;
+  int D.2407;
+  long unsigned int _1;
+  long unsigned int _2;
+  int[4] * _3;
+  int _4;
+  int _5;
+  int _6;
+  int _12;
+  int _17(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  sumSecondary_9 = 0;
+  i_10 = 0;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  _1 = (long unsigned int) i_7;
+  _2 = _1 * 16;
+  _3 = arr_14(D) + _2;
+  _4 = size_11(D) + -1;
+  _5 = _4 - i_7;
+  _6 = (*_3)[_5];
+  sumSecondary_15 = sumSecondary_8 + _6;
+  i_16 = i_7 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # i_7 = PHI <i_10(2), i_16(3)>
+  # sumSecondary_8 = PHI <sumSecondary_9(2), sumSecondary_15(3)>
+  if (i_7 < size_11(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _12 = sumSecondary_8;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _12;
+;;    succ:       EXIT
+
+}
+
+
+Partition 1: size 4 align 4
+	sumSecondary_8
+Partition 0: size 4 align 4
+	i_7
+
+;; Generating RTL for gimple basic block 2
+
+;; sumSecondary_9 = 0;
+
+(insn 7 6 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":47:9 -1
+     (nil))
+
+;; i_10 = 0;
+
+(insn 8 7 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+        (const_int 0 [0])) "diagonal_sum.c":49:10 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; _1 = (long unsigned int) i_7;
+
+(insn 12 11 13 (set (reg:SI 90)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])) "diagonal_sum.c":50:26 -1
+     (nil))
+
+(insn 13 12 0 (set (reg:DI 82 [ _1 ])
+        (sign_extend:DI (reg:SI 90))) "diagonal_sum.c":50:26 -1
+     (nil))
+
+;; _2 = _1 * 16;
+
+(insn 14 13 0 (parallel [
+            (set (reg:DI 83 [ _2 ])
+                (ashift:DI (reg:DI 82 [ _1 ])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:26 -1
+     (nil))
+
+;; _3 = arr_14(D) + _2;
+
+(insn 15 14 16 (set (reg/f:DI 91)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])) "diagonal_sum.c":50:26 -1
+     (nil))
+
+(insn 16 15 0 (parallel [
+            (set (reg/f:DI 84 [ _3 ])
+                (plus:DI (reg:DI 83 [ _2 ])
+                    (reg/f:DI 91)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:26 -1
+     (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+            (reg:DI 83 [ _2 ]))
+        (nil)))
+
+;; _4 = size_11(D) + -1;
+
+(insn 17 16 18 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])) "diagonal_sum.c":50:34 -1
+     (nil))
+
+(insn 18 17 0 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (plus:SI (reg:SI 92)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:34 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+
+;; _5 = _4 - i_7;
+
+(insn 19 18 0 (parallel [
+            (set (reg:SI 86 [ _5 ])
+                (minus:SI (reg:SI 85 [ _4 ])
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:36 -1
+     (nil))
+
+;; _6 = (*_3)[_5];
+
+(insn 20 19 21 (set (reg:DI 93)
+        (sign_extend:DI (reg:SI 86 [ _5 ]))) "diagonal_sum.c":50:29 -1
+     (nil))
+
+(insn 21 20 0 (set (reg:SI 87 [ _6 ])
+        (mem:SI (plus:DI (mult:DI (reg:DI 93)
+                    (const_int 4 [0x4]))
+                (reg/f:DI 84 [ _3 ])) [2 (*_3)[_5]+0 S4 A32])) "diagonal_sum.c":50:29 -1
+     (nil))
+
+;; sumSecondary_15 = sumSecondary_8 + _6;
+
+(insn 22 21 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+                    (reg:SI 87 [ _6 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:21 -1
+     (nil))
+
+;; i_16 = i_7 + 1;
+
+(insn 23 22 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":49:21 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 24 23 25 17 (nil) [0 uses])
+
+(note 25 24 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (i_7 < size_11(D))
+
+(insn 27 25 28 (set (reg:SI 94)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])) "diagonal_sum.c":49:14 -1
+     (nil))
+
+(insn 28 27 29 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 94)
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32]))) "diagonal_sum.c":49:14 -1
+     (nil))
+
+(jump_insn 29 28 0 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "diagonal_sum.c":49:14 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; _12 = sumSecondary_8;
+
+(insn 31 30 0 (set (reg:SI 88 [ _12 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])) "diagonal_sum.c":52:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; <L3>:
+
+(code_label 32 31 33 19 (nil) [0 uses])
+
+(note 33 32 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _12;
+
+(insn 34 33 35 (set (reg:SI 89 [ <retval> ])
+        (reg:SI 88 [ _12 ])) "diagonal_sum.c":52:12 -1
+     (nil))
+
+(jump_insn 35 34 36 (set (pc)
+        (label_ref 0)) "diagonal_sum.c":52:12 -1
+     (nil))
+
+(barrier 36 35 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+Removing jump 35.
+Merging block 8 into block 6...
+Merged blocks 6 and 8.
+Merged 6 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])
+        (reg:SI 5 di [ size ])) "diagonal_sum.c":45:41 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+        (reg:DI 4 si [ arr ])) "diagonal_sum.c":45:41 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+        (const_int 0 [0])) "diagonal_sum.c":47:9 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+        (const_int 0 [0])) "diagonal_sum.c":49:10 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (label_ref 24)) "diagonal_sum.c":49:5 -1
+     (nil)
+ -> 24)
+;;  succ:       5
+
+(barrier 10 9 26)
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5
+(code_label 26 10 11 4 18 (nil) [1 uses])
+(note 11 26 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 90)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])) "diagonal_sum.c":50:26 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:DI 82 [ _1 ])
+        (sign_extend:DI (reg:SI 90))) "diagonal_sum.c":50:26 -1
+     (nil))
+(insn 14 13 15 4 (parallel [
+            (set (reg:DI 83 [ _2 ])
+                (ashift:DI (reg:DI 82 [ _1 ])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:26 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:DI 91)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])) "diagonal_sum.c":50:26 -1
+     (nil))
+(insn 16 15 17 4 (parallel [
+            (set (reg/f:DI 84 [ _3 ])
+                (plus:DI (reg:DI 83 [ _2 ])
+                    (reg/f:DI 91)))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:26 -1
+     (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [3 arr+0 S8 A64])
+            (reg:DI 83 [ _2 ]))
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 92)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])) "diagonal_sum.c":50:34 -1
+     (nil))
+(insn 18 17 19 4 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (plus:SI (reg:SI 92)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:34 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+(insn 19 18 20 4 (parallel [
+            (set (reg:SI 86 [ _5 ])
+                (minus:SI (reg:SI 85 [ _4 ])
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:36 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:DI 93)
+        (sign_extend:DI (reg:SI 86 [ _5 ]))) "diagonal_sum.c":50:29 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 87 [ _6 ])
+        (mem:SI (plus:DI (mult:DI (reg:DI 93)
+                    (const_int 4 [0x4]))
+                (reg/f:DI 84 [ _3 ])) [2 (*_3)[_5]+0 S4 A32])) "diagonal_sum.c":50:29 -1
+     (nil))
+(insn 22 21 23 4 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])
+                    (reg:SI 87 [ _6 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":50:21 -1
+     (nil))
+(insn 23 22 24 4 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "diagonal_sum.c":49:21 -1
+     (nil))
+;;  succ:       5 (FALLTHRU,DFS_BACK)
+
+;; basic block 5, loop depth 1, maybe hot
+;;  prev block 4, next block 6, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2
+;;              4 (FALLTHRU,DFS_BACK)
+(code_label 24 23 25 5 17 (nil) [1 uses])
+(note 25 24 27 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 27 25 28 5 (set (reg:SI 94)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 i+0 S4 A64])) "diagonal_sum.c":49:14 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 94)
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [2 size+0 S4 A32]))) "diagonal_sum.c":49:14 -1
+     (nil))
+(jump_insn 29 28 30 5 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "diagonal_sum.c":49:14 -1
+     (nil)
+ -> 26)
+;;  succ:       4
+;;              6 (FALLTHRU)
+
+;; basic block 6, loop depth 0, maybe hot
+;;  prev block 5, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5 (FALLTHRU)
+(note 30 29 31 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 34 6 (set (reg:SI 88 [ _12 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 sumSecondary+0 S4 A32])) "diagonal_sum.c":52:12 -1
+     (nil))
+(insn 34 31 38 6 (set (reg:SI 89 [ <retval> ])
+        (reg:SI 88 [ _12 ])) "diagonal_sum.c":52:12 -1
+     (nil))
+(insn 38 34 39 6 (set (reg/i:SI 0 ax)
+        (reg:SI 89 [ <retval> ])) "diagonal_sum.c":53:1 -1
+     (nil))
+(insn 39 38 0 6 (use (reg/i:SI 0 ax)) "diagonal_sum.c":53:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function printResult (printResult, funcdef_no=3, decl_uid=2352, cgraph_uid=4, symbol_order=3)
+
+void printResult (int a, int b)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  printf ("%d is main sum", a_2(D));
+  printf ("%d is secondary sum", b_4(D));
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (a_2(D) - 2 )
+Partition 4 (b_4(D) - 4 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (a_2(D) - 2 )
+Partition 1, base 1 (b_4(D) - 4 )
+
+
+Partition map 
+
+Partition 0 (a_2(D) - 2 )
+Partition 1 (b_4(D) - 4 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (a_2(D) - 2 )
+Partition 1 (b_4(D) - 4 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (a_2(D) - 2 )
+Partition 1 (b_4(D) - 4 )
+
+void printResult (int a, int b)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  printf ("%d is main sum", a_2(D));
+  printf ("%d is secondary sum", b_4(D));
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; printf ("%d is main sum", a_2(D));
+
+(insn 7 6 8 (set (reg:SI 82)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 a+0 S4 A32])) "diagonal_sum.c":55:5 -1
+     (nil))
+
+(insn 8 7 9 (set (reg:SI 4 si)
+        (reg:SI 82)) "diagonal_sum.c":55:5 -1
+     (nil))
+
+(insn 9 8 10 (set (reg:DI 83)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7817fb3ca6c0 *.LC3>)) "diagonal_sum.c":55:5 -1
+     (nil))
+
+(insn 10 9 11 (set (reg:DI 5 di)
+        (reg:DI 83)) "diagonal_sum.c":55:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7817fb3ca6c0 *.LC3>)
+        (nil)))
+
+(insn 11 10 12 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":55:5 -1
+     (nil))
+
+(call_insn 12 11 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":55:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+
+;; printf ("%d is secondary sum", b_4(D));
+
+(insn 13 12 14 (set (reg:SI 84)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 b+0 S4 A32])) "diagonal_sum.c":56:5 -1
+     (nil))
+
+(insn 14 13 15 (set (reg:SI 4 si)
+        (reg:SI 84)) "diagonal_sum.c":56:5 -1
+     (nil))
+
+(insn 15 14 16 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7817fb3ca750 *.LC4>)) "diagonal_sum.c":56:5 -1
+     (nil))
+
+(insn 16 15 17 (set (reg:DI 5 di)
+        (reg:DI 85)) "diagonal_sum.c":56:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7817fb3ca750 *.LC4>)
+        (nil)))
+
+(insn 17 16 18 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":56:5 -1
+     (nil))
+
+(call_insn 18 17 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":56:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 a+0 S4 A32])
+        (reg:SI 5 di [ a ])) "diagonal_sum.c":54:31 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 b+0 S4 A32])
+        (reg:SI 4 si [ b ])) "diagonal_sum.c":54:31 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 82)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 a+0 S4 A32])) "diagonal_sum.c":55:5 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 4 si)
+        (reg:SI 82)) "diagonal_sum.c":55:5 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 83)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7817fb3ca6c0 *.LC3>)) "diagonal_sum.c":55:5 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg:DI 83)) "diagonal_sum.c":55:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7817fb3ca6c0 *.LC3>)
+        (nil)))
+(insn 11 10 12 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":55:5 -1
+     (nil))
+(call_insn 12 11 13 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":55:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 13 12 14 2 (set (reg:SI 84)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 b+0 S4 A32])) "diagonal_sum.c":56:5 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 4 si)
+        (reg:SI 84)) "diagonal_sum.c":56:5 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7817fb3ca750 *.LC4>)) "diagonal_sum.c":56:5 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 5 di)
+        (reg:DI 85)) "diagonal_sum.c":56:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7817fb3ca750 *.LC4>)
+        (nil)))
+(insn 17 16 18 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "diagonal_sum.c":56:5 -1
+     (nil))
+(call_insn 18 17 0 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7817fb2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "diagonal_sum.c":56:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
